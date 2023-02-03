@@ -13,50 +13,46 @@ require_once __DIR__ . '/models/Movie.php';
 </head>
 
 <body>
-    <h1>
-        PHP OOP 1
-    </h1>
-    <div>
+
+    <ul class="list-group p-2">
         <?php
-        $movie1 = new Movie('Avengers', 'Tutti contro il crimine', 'Green', '2 ore');
-        $movie2 = new Movie('Spiderman', 'Ragno contro il crimine', 'Yellow', '1.5 ore');
-        $movie3 = new Movie('Batman', 'Pipistrello contro il crimine', 'Red', '3 ore');
-        $movie4 = new Movie('Superman', 'Uomo contro il crimine', 'Green', '1.5 ore');
-        // var_dump($movie1, $movie2, $movie3, $movie4);
+        foreach ($movies as $movie) {
         ?>
-    </div>
-    <ul>
-        <li>
-            <h3 class="m-0 text-danger">
+            <li class="list-group-item bg-warning">
+                <h3 class="m-0 text-danger">
+                    <?php
+                    echo $movie->getTitle()
+                    ?>
+                </h3>
+            </li>
+            <li class="list-group-item">
+                <span class="fw-bold">
+                    TRAMA -->
+                </span>
                 <?php
-                echo $movie1->getTitle()
+                echo $movie->getPlot()
                 ?>
-            </h3>
-        </li>
-        <li>
-            <span class="fw-bold">
-                TRAMA -->
-            </span>
-            <?php
-            echo $movie1->getPlot()
-            ?>
-        </li>
-        <li>
-            <span class="fw-bold">
-                TIPO -->
-            </span>
-            <?php
-            echo $movie1->type
-            ?>
-        </li>
-        <li>
-            <span class="fw-bold">
-                DURATA FILM -->
-            </span>
-            <?php
-            echo $movie1->duration
-            ?>
-        </li>
+            </li>
+            <li class="list-group-item">
+                <span class="fw-bold">
+                    TIPO -->
+                </span>
+                <?php
+                echo $movie->type
+                ?>
+            </li>
+            <li class="list-group-item">
+                <span class="fw-bold">
+                    DURATA FILM -->
+                </span>
+                <?php
+                echo $movie->duration
+                ?>
+                <span> ore</span>
+            </li>
+        <?php
+        };
+        ?>
     </ul>
 </body>
 
