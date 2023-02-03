@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/models/Movie.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +15,12 @@
     <h1>
         PHP OOP 1
     </h1>
+    <div>
+        <?php
+        $movie1 = new Movie('Avengers', 'Tutti contro il crimine', 'green', '2 ore');
+        var_dump($movie1);
+        ?>
+    </div>
 </body>
 
 </html>
